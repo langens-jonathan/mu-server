@@ -1,0 +1,70 @@
+<div style="display:block; width:95%; margin:auto;">
+  {{md-input value=searchString label='SEARCH' class="col s12" validate=true}}
+  {{md-btn text='Search'
+            action='login'
+            icon='mdi-content-send'
+            buttonType='large'
+            class='deep-orange darken-2 white-text'}}
+</div>	    
+<div style="display:block; width:95%; margin:auto; margin-top:15px; margin-bottom:15px;">
+  {{#link-to 'store' tag='h3'}}
+    {{link-to 'front-end' 'store'}}
+  {{/link-to}}
+
+  {{#link-to 'store'}}
+    {{link-to 'back-end' 'store'}}
+  {{/link-to}}
+
+  {{#link-to 'store'}}
+    {{link-to 'security' 'store'}}
+  {{/link-to}}
+
+  {{#link-to 'store'}}
+    {{link-to 'search' 'store'}}
+  {{/link-to}}
+
+  {{#link-to 'store'}}
+    {{link-to 'users' 'store'}}
+  {{/link-to}}
+
+  {{#link-to 'store'}}
+    {{link-to 'file management' 'store'}}
+  {{/link-to}}
+
+  {{#link-to 'store'}}
+    {{link-to 'big data' 'store'}}
+  {{/link-to}}
+
+  {{#link-to 'store'}}
+    {{link-to 'machine learing' 'store'}}
+  {{/link-to}}
+
+  {{#link-to 'store'}}
+    {{link-to 'natural language' 'store'}}
+  {{/link-to}}
+  </div>
+
+{{#each model as |row|}}
+<div style="width:500px; display:inline-block; margin:10px;">
+{{#md-card title=row.title}}
+    {{#md-card-content}}
+      <img src={{row.imageLocation}} />
+      <br>
+      {{row.description}}
+    {{/md-card-content}}
+    {{#md-card-action}}
+	{{md-btn text='More Info'
+            action='login'
+            icon='mdi-content-send'
+            buttonType='large'
+            class='light-blue darken-2 white-text'}}
+        {{md-btn text='INSTALL'
+            action='login'
+            icon='mdi-content-send'
+            buttonType='large'
+            class='deep-orange darken-2 white-text'}}
+
+    {{/md-card-action}}
+{{/md-card}}
+</div>
+{{/each}}

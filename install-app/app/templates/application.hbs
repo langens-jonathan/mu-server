@@ -1,0 +1,65 @@
+{{#md-navbar name='MU SERVER INSTALLATION' class='indigo darken-2'}}
+{{/md-navbar}}
+
+<div style="width:90%;margin:auto;">
+
+{{#if redirecting}}
+You will be shortly redirected to your MU SEMTECH Server Installation.
+{{else}}
+
+{{#md-card title="Welcome" id="welcome-to-installation"}}
+    {{#md-card-content}}
+    Welcome to the installation for your new Mu Server. When you scroll down you will be able to configure your new server. After you have made sure that the basic set up is what you want you can click the 'Take me to my server' button at the bottom of this page. If you are OK with the "sensible" defaults in this configuration script then you can also press the END-button on your keyboard and click that button directly.
+    {{/md-card-content}}
+    {{#md-card-action}}
+    {{/md-card-action}}
+{{/md-card}}
+
+{{#md-card title="Database" id="database-config"}}
+    {{#md-card-content}}
+	{{md-input value=databasePort label='Port' class="col s12" validate=true}}
+	{{md-check name="Exposed" checked=databaseExposed}}
+        {{md-select content=databaseOptions
+          value=databaseType
+          label="Type"
+          prompt="Please choose..."
+          class="col s12"}}
+        {{/md-card-content}}
+    {{#md-card-action}}
+    {{/md-card-action}}
+{{/md-card}}
+
+{{#md-card title="Store" id="store-config"}}
+    {{#md-card-content}}
+	{{md-input value=storeLocation label='Port' class="col s12" validate=true}}
+    {{/md-card-content}}
+    {{#md-card-action}}
+    {{/md-card-action}}
+{{/md-card}}
+
+{{#md-card title="Management Console" id="management-config"}}
+    {{#md-card-content}}
+	{{md-input value=managementUser label='Default Admin User' class="col s12" validate=true}}
+	{{md-input value=managementPwd label='Default Admin Password' class="col s12" validate=true}}
+	{{md-input value=managementFrontEndPort label='Management Console Port' class="col s12" validate=true}}
+    {{/md-card-content}}
+    {{#md-card-action}}
+    {{/md-card-action}}
+{{/md-card}}
+
+{{#md-card title="MU Server" id="server-config"}}
+    {{#md-card-content}}
+	{{md-input value=muServerPort label='Port' class="col s12" validate=true}}
+    {{/md-card-content}}
+    {{#md-card-action}}
+    {{/md-card-action}}
+{{/md-card}}
+
+{{md-btn text='Take me to my server'
+    action='configureServer'
+    icon='mdi-content-send'
+    buttonType='large'
+    class='deep-orange darken-2 white-text'}}
+
+{{/if}}
+</div>

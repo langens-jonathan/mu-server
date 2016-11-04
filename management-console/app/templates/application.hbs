@@ -1,0 +1,41 @@
+{{#md-navbar name='MU PROJECT MANAGEMENT CONSOLE' class='blue-grey darken-3'}}
+  <!-- A workaround to get the "active" class
+    to apply to the active <li> automatically -->
+  {{#link-to 'index' tagName='li'}}
+    {{link-to 'DASHBOARD' 'index'}}
+  {{/link-to}}
+  {{#link-to 'index' tagName='li'}}
+    {{link-to 'CONFIGURE' 'index'}}
+  {{/link-to}}
+  {{#link-to 'index' tagName='li'}}
+    {{link-to 'MICROSERVICES' 'index'}}
+  {{/link-to}}
+  {{#link-to 'store' tagName='li'}}
+    {{link-to 'STORE' 'store'}}
+  {{/link-to}}
+  {{#if session.isAuthenticated}}
+    {{#link-to 'index' tagName='li'}}
+      <div {{action "logout"}}>
+      {{link-to 'LOGOUT' 'index'}}
+      </div>
+    {{/link-to}}
+  {{/if}}
+{{/md-navbar}}
+
+<div style="width:87%; margin:auto">
+
+{{#if session.isAuthenticated}}
+  {{outlet}}
+{{else}}
+<div style="width:500px; margin:auto; padding-top:125px;">
+	{{md-input value=user label='User' class="col s12" validate=true}}
+	{{md-input value=pwd label='Password' class="col s12" validate=true}}
+	
+        {{md-btn text='Log in'
+            action='login'
+            icon='mdi-content-send'
+            buttonType='large'
+            class='deep-orange darken-2 white-text'}}
+</div>
+{{/if}}
+</div>

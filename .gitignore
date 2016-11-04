@@ -1,0 +1,46 @@
+*~
+
+data/
+
+
+# See http://help.github.com/ignore-files/ for more about ignoring files.
+/install-app/~*
+/install-app/*.pid
+
+# compiled output
+/install-app/dist
+/install-app/tmp
+
+# dependencies
+/install-app/node_modules
+/install-app/bower_components
+
+# misc
+/install-app/.sass-cache
+/install-app/connect.lock
+/install-app/coverage/*
+/install-app/libpeerconnection.log
+/install-app/npm-debug.log
+/install-app/testem.log
+
+# See http://help.github.com/ignore-files/ for more about ignoring files.
+/management-console/*~
+/management-console/*.pid
+/management-console/*.yml
+/management-console/*.port
+
+# compiled output
+/management-console/dist
+/management-console/tmp
+
+# dependencies
+/management-console/node_modules
+/management-console/bower_components
+
+# misc
+/management-console/.sass-cache
+/management-console/connect.lock
+/management-console/coverage/*
+/management-console/libpeerconnection.log
+/management-console/npm-debug.log
+/management-console/testem.log
